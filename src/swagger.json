@@ -1,0 +1,108 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "API-Node-Typescript",
+    "description": "Uma simples API para criação e listagem de clientes",
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "servers": [
+    {
+      "url": "/",
+      "description": "With docker-compose"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Clientes",
+      "description": "API para sistema de clientes"
+    }
+  ],
+  "consumes": ["application/json"],
+  "produces": ["application/json"],
+  "paths": {
+    "/cliente/todos": {
+      "get": {
+        "tags": ["Listar Clientes"],
+        "summary": "Pega todos os clientes no sistema",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Clientes"
+            }
+          }
+        }
+      }
+    },
+    "/cliente": {
+      "post": {
+        "tags": ["Criar Cliente"],
+        "summary": "Cria novo cliente no sistema",
+        "requestBody": {
+          "description": "Cliente Object",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/definitions/Cliente"
+              }
+            }
+          }
+        },
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/id"
+            }
+          },
+          "400": {
+            "description": "Failed. Bad post data."
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "id": {
+      "properties": {
+        "uuid": {
+          "type": "string"
+        }
+      }
+    },
+    "Cliente": {
+      "type": "object",
+      "properties": {
+        "nome": {
+          "type": "string"
+        },
+        "endereco": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "dataDoCadastro": {
+          "type": "string"
+        }
+      }
+    },
+    "Clientes": {
+      "type": "object",
+      "properties": {
+        "clientes": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/Cliente"
+          }
+        }
+      }
+    }
+  }
+}

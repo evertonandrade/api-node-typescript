@@ -5,7 +5,7 @@ import CreateClienteService from '../services/CreateClienteService';
 
 const clientesRouter = Router();
 
-clientesRouter.get('/', async (request, response) => {
+clientesRouter.get('/todos', async (request, response) => {
   const clientesRepository = getCustomRepository(ClientesRepository);
   const clientes = await clientesRepository.find();
 
