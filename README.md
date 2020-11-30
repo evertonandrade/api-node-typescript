@@ -1,5 +1,5 @@
 <div align="center">
-  <h2>Techs</h2>
+  <h2> Tecnologias</h2>
   <img src="https://raw.githubusercontent.com/TypeStrong/ts-node/HEAD/logo.svg?sanitize=true" width=200px>
   <img src="https://avatars2.githubusercontent.com/u/20165699?s=400&v=4" width="100px" >
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/1200px-Postgresql_elephant.svg.png" width="100px">
