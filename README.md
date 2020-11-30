@@ -1,2 +1,2 @@
-# api-node-typescript
-API de criação e listagem de clientes feita com Node, Typescript, TypeORM, PostgresSQL, Docker.
+# api-node-express-ts
+Template de uma aplicação Node.js + Express + Typescript + ESLint + Prettier...

@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+
+  api:
+    container_name: api-node-ts
+    build: '.'
+    volumes:
+      - .:/home/node/api
+      - /home/node/api/node_modules
+    depends_on:
+      - pg-db
+    networks:
+      - app-connect
+    ports:
+      - '3000:3000'
+
+  pg-db:
+    container_name: pg-db
+    image: postgres:11
+    restart: unless-stopped
+    volumes:
+      - postgres-data:/data
+    environment:
+      POSTGRES_PASSWORD: jefa1234
+      POSTGRES_USER: postgres
+      POSTGRES_DB: postgres
+    networks:
+      - app-connect
+
+volumes:
+  postgres-data:
+
+networks:
+  app-connect:
+      driver: bridge
