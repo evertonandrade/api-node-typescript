@@ -11,6 +11,7 @@
 
 Clone o repositório <br>
 `git clone https://github.com/evertonandrade/api-node-typescript.git` <br>
+---
 Vá para a pasta do repositório e execute:  <br>
 `docker-compose up` (instala e inicia todos os serviços)  <br>
 
